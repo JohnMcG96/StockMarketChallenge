@@ -59,7 +59,7 @@ public class StockObject {
 	
 	
 	public String toString() {
-		return "" + this.symbol + "\n" + this.pClose + "\n" + this.open + "\n" + this.high + "\n" + this.low + "\n" + this.current;
+		return "Symbol: " + this.symbol + "\nClose: " + this.pClose + "\nOpen: " + this.open + "\nHigh: " + this.high + "\nLow: " + this.low + "\nCurrent: " + this.current;
 	}
 	
 
