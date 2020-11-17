@@ -110,9 +110,10 @@ public class StockMain {
 		        String line = scanner.nextLine();
 		        lineNum++;
 		        if(line.contains(symbol)) { 
-		            for (int i=lineNum; i<lineNum+10; i++) {
+		            for (int i=lineNum; i<=lineNum+5; i++) {
 		            	foundInFile.add(line.toString());
-		            	line = scanner.nextLine();
+		            	if (i <= lineNum+4)
+		            		line = scanner.nextLine();
 		            }
 		            scanner.close();
 		            return true;
@@ -140,10 +141,9 @@ public class StockMain {
 		}
 		else {
 			stockResponse.toString();
-			DiscountJSON tbp = new DiscountJSON();
-			tbp.DiscountJSON(stockResponse, sObj);
+			DiscountJSON discount = new DiscountJSON(stockResponse, sObj);
 			try {
-				Files.write(Paths.get(tempFile.toString()), stockResponse.getBytes(), StandardOpenOption.APPEND);
+				Files.write(Paths.get(tempFile.toString()), discount.toString(sObj).getBytes(), StandardOpenOption.APPEND);
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
