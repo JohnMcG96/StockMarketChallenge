@@ -33,14 +33,11 @@ public class DiscountJSON {
 		}
 		
 		sObj.setSymbol(parsedLine.get(0));
-		sObj.setOpen(parsedLine.get(1));
-		sObj.setHigh(parsedLine.get(2));
-		sObj.setLow(parsedLine.get(3));
-		sObj.setCurrent(parsedLine.get(4));
-		sObj.setClose(parsedLine.get(7));
-		
-		System.out.println(sObj.toString());
-		
+		sObj.setOpen(Float.parseFloat(parsedLine.get(1)));
+		sObj.setHigh(Float.parseFloat(parsedLine.get(2)));
+		sObj.setLow(Float.parseFloat(parsedLine.get(3)));
+		sObj.setCurrent(Float.parseFloat(parsedLine.get(4)));
+		sObj.setClose(Float.parseFloat(parsedLine.get(7)));
 	}
 	
 	public String toString(StockObject sObj) {

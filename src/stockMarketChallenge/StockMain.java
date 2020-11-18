@@ -142,6 +142,7 @@ public class StockMain {
 		else {
 			stockResponse.toString();
 			DiscountJSON discount = new DiscountJSON(stockResponse, sObj);
+			System.out.println(sObj.toString());
 			try {
 				Files.write(Paths.get(tempFile.toString()), discount.toString(sObj).getBytes(), StandardOpenOption.APPEND);
 			} catch (IOException e) {
